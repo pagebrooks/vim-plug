@@ -1013,9 +1013,9 @@ function! s:update_impl(pull, force, args) abort
   let s:clone_opt = get(g:, 'plug_shallow', 1) ?
         \ '--depth 1' . (s:git_version_requirement(1, 7, 10) ? ' --no-single-branch' : '') : ''
 
-  if has('win32unix')
+  "if has('win32unix')
     let s:clone_opt .= ' -c core.eol=lf -c core.autocrlf=input'
-  endif
+  "endif
 
   let s:submodule_opt = s:git_version_requirement(2, 8) ? ' --jobs='.threads : ''
 
